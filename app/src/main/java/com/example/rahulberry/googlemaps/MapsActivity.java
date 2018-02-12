@@ -54,7 +54,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //The parameters below are (provider(CAN BE GPS), time between updates, distance between updates, locationlistener is an interface which contains the standard methods that were developed below)
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
                 @Override
-                //the moment the class  is trigerred the reference variable, location is given the lat and lng
+                //the moment the class  is triggered the reference variable, location is given the lat and lng
                 public void onLocationChanged(Location location) {
                     //get latitude
                     double latitude = location.getLatitude();
