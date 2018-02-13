@@ -26,13 +26,11 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                 String smsBody = smsMessage.getMessageBody().toString();
                 String address = smsMessage.getOriginatingAddress();
 
-                if(address = "+447541241808"){
+                if (address == "+447541241808") {
                     smsMessageStr = smsBody;
+                    Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
                 }
             }
-            Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
-
-
         }
     }
 }

@@ -10,7 +10,12 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,11 +26,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static MapsActivity inst;
+    ArrayList<String> smsMessagesList = new ArrayList<String>();
+    ArrayAdapter arrayAdapter;
     private GoogleMap mMap;
     private LocationManager manager;
     private LocationListener locationListener;
@@ -151,7 +159,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             });
         }
+
+        int permissionCheck;
+        int MY_PERMISSIONS_REQUEST_READ_SMS = 123;
+        permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.READ_SMS);
+
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.READ_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(MapsActivity.this,
+                    new String[]{Manifest.permission.READ_SMS},
+                    MY_PERMISSIONS_REQUEST_READ_SMS);
+
+            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
+
+        }
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
