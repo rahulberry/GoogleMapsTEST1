@@ -59,6 +59,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+
+
+        int permissionCheck;
+        int MY_PERMISSIONS_REQUEST_READ_SMS = 123;
+        permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.READ_SMS);
+
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.READ_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(MapsActivity.this,
+                    new String[]{Manifest.permission.READ_SMS},
+                    MY_PERMISSIONS_REQUEST_READ_SMS);
+
+            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
+
+        }
+
+
+
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -158,26 +184,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 }
             });
-        }
-
-        int permissionCheck;
-        int MY_PERMISSIONS_REQUEST_READ_SMS = 123;
-        permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
-                Manifest.permission.READ_SMS);
-
-        // Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(MapsActivity.this,
-                Manifest.permission.READ_SMS)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(MapsActivity.this,
-                    new String[]{Manifest.permission.READ_SMS},
-                    MY_PERMISSIONS_REQUEST_READ_SMS);
-
-            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-            // app-defined int constant. The callback method gets the
-            // result of the request.
-
         }
     }
 
