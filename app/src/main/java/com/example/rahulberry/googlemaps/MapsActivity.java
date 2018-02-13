@@ -25,11 +25,22 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private static MapsActivity inst;
     private GoogleMap mMap;
     private LocationManager manager;
     private LocationListener locationListener;
 
     LocationManager locationManager;
+
+    public static MapsActivity instance() {
+        return inst;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        inst = this;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

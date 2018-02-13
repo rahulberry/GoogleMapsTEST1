@@ -26,14 +26,13 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                 String smsBody = smsMessage.getMessageBody().toString();
                 String address = smsMessage.getOriginatingAddress();
 
-                smsMessageStr += "SMS From: " + address + "\n";
-                smsMessageStr += smsBody + "\n";
+                if(address = "+447541241808"){
+                    smsMessageStr = smsBody;
+                }
             }
             Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
 
-            //this will update the UI with message
-            MapsActivity inst = MapsActivity.instance();
-            inst.updateList(smsMessageStr);
+
         }
     }
 }
