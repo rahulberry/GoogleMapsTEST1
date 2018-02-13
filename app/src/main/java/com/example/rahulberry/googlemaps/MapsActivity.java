@@ -26,6 +26,8 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private LocationManager manager;
+    private LocationListener locationListener;
 
     LocationManager locationManager;
 
@@ -153,4 +155,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     }
+
+    // this was in an example, I don't know what it does
+
+    /*@Override
+    protected void onPause() {
+        super.onPause();
+        manager.removeUpdates(locationListener);
+        Log.i("onPause...","paused");
+    }
+   */
 }
