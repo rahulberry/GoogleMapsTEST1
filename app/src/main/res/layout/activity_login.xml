@@ -34,7 +34,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/formBack"
-        app:layout_constraintVertical_bias="0.725"
+        app:layout_constraintVertical_bias="0.737"
         app:srcCompat="@drawable/logo">
 
     </ImageView>
@@ -59,20 +59,20 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-
         android:layout_marginTop="8dp"
         android:background="@drawable/rounded_white"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/formBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/formBack"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintEnd_toEndOf="@id/whitebox"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintStart_toStartOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.444" />
 
     <ImageView
         android:id="@+id/password_icon"
@@ -134,12 +134,11 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.025" />
 
     <Button
         android:layout_width="190dp"
@@ -154,12 +153,11 @@
         android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759">
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.987">
 
     </Button>
 
@@ -176,12 +174,12 @@
         android:text="Log in"
         android:textColor="@color/white"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.775" />
 
     <Button
         android:id="@+id/register"
@@ -194,11 +192,11 @@
         android:paddingRight="20dp"
         android:text="Register"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/formBack"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.775" />
 
 </android.support.constraint.ConstraintLayout>

@@ -51,31 +51,30 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.015" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:paddingEnd="10dp"
-
         android:paddingStart="10dp"
         android:text="Just a few details to get you started"
         android:textColor="@color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintEnd_toEndOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.133" />
 
     <ImageView
         android:id="@+id/whitebox"
@@ -102,13 +101,13 @@
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/formBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/formBack"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintEnd_toEndOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintStart_toStartOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.65999997" />
 
 
     <AutoCompleteTextView
@@ -122,10 +121,11 @@
         android:hint="Email Address"
         android:paddingStart="10dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/formBack"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/formBack" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.26999998" />
 
     <AutoCompleteTextView
         android:id="@+id/username"
@@ -138,11 +138,11 @@
         android:hint="Username"
         android:paddingStart="10dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/formBack"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/formBack"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.45999998" />
 
     <ImageView
         android:id="@+id/password_icon"
@@ -176,7 +176,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/register_2"
         android:layout_width="126dp"
         android:layout_height="57dp"
         android:layout_gravity="center"
@@ -188,11 +188,11 @@
         android:text="Register"
         android:textColor="@color/white"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintBottom_toBottomOf="@id/whitebox"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="@id/whitebox"
+        app:layout_constraintRight_toRightOf="@id/whitebox"
+        app:layout_constraintTop_toTopOf="@id/whitebox"
+        app:layout_constraintVertical_bias="0.921" />
 
 </android.support.constraint.ConstraintLayout>
