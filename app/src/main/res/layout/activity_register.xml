@@ -109,7 +109,6 @@
         app:layout_constraintTop_toTopOf="@id/whitebox"
         app:layout_constraintVertical_bias="0.65999997" />
 
-
     <AutoCompleteTextView
         android:id="@+id/user_email"
         android:layout_width="311dp"
@@ -174,6 +173,17 @@
         app:layout_constraintStart_toStartOf="@+id/username"
         app:layout_constraintTop_toTopOf="@+id/username"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:layout_width="37dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintBottom_toBottomOf="@+id/user_email"
+        app:layout_constraintEnd_toEndOf="@+id/user_email"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="@+id/user_email"
+        app:layout_constraintTop_toTopOf="@+id/user_email"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/register_2"
