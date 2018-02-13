@@ -196,6 +196,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    public void updateList(final String smsMessage) {
+        arrayAdapter.insert(smsMessage, 0);
+        arrayAdapter.notifyDataSetChanged();
+    }
+
+
     // this was in an example, I don't know what it does
 
     /*@Override

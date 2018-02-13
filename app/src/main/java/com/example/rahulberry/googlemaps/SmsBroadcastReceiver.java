@@ -29,6 +29,8 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                 if (address == "+447541241808") {
                     smsMessageStr = smsBody;
                     Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
+                    MapsActivity inst = MapsActivity.instance();
+                    inst.updateList(smsMessageStr);
                 }
             }
         }
