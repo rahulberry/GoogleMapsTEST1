@@ -8,16 +8,16 @@ import android.widget.Button;
 
 public class login extends AppCompatActivity {
 
-    Button register;
+    Button create_account;
     Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login2);
 
-        register = (Button)findViewById(R.id.register);
-        login = (Button)findViewById(R.id.login);
+        create_account= (Button)findViewById(R.id.create_new);
+        login = (Button)findViewById(R.id.login2);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        register.setOnClickListener(new View.OnClickListener() {
+        create_account.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class login extends AppCompatActivity {
         });
         }
     }
-
+//MAKE THIS FUNCTION USING THE PREMADE LOGIN MENU ANDROID STUDIO OFFERS!!!
 
 
 

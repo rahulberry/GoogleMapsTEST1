@@ -12,14 +12,14 @@ public class register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_register);
+      setContentView(R.layout.activity_register2);
 
-        register = (Button)findViewById(R.id.register_2);
+        register = (Button)findViewById(R.id.register_two);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(register.this, MapsActivity.class);
+                Intent i = new Intent(register.this, welcome_one.class);
                 startActivity(i);
             }
         });
