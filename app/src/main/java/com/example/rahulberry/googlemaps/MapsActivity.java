@@ -8,9 +8,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -61,7 +63,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
 
-
         int permissionCheck;
         int MY_PERMISSIONS_REQUEST_READ_SMS = 123;
         permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
@@ -99,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //The if statement below checks if the network provider is enabled
         if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER )){
             //The parameters below are (provider(CAN BE GPS), time between updates, distance between updates, locationlistener is an interface which contains the standard methods that were developed below)
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 6, 0, new LocationListener() {
                 @Override
                 //the moment the class  is triggered the reference variable, location is given the lat and lng
                 public void onLocationChanged(Location location) {
@@ -144,7 +145,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             });
         }
         else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6, 0, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
                     //get latitude

@@ -38,7 +38,11 @@
             android:label='Map'
             >
         </activity>
-
+        <activity
+            android:name=".drawer"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <!-- the activity below includes the class register -->
         <activity android:name=".register"
             android:theme="@style/AppTheme">
