@@ -10,14 +10,22 @@ public class login extends AppCompatActivity {
 
     Button create_account;
     Button login;
+    Button test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
 
+        test= (Button)findViewById(R.id.testbutton);
         create_account= (Button)findViewById(R.id.create_new);
         login = (Button)findViewById(R.id.login2);
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            MapsActivity send = MapsActivity.instance();
+            send.sendMsg("+447541241808", "Test");
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

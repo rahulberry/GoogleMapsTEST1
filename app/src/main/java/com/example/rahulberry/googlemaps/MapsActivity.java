@@ -1,6 +1,8 @@
 package com.example.rahulberry.googlemaps;
 
 import android.Manifest;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,6 +15,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -65,6 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         int permissionCheck;
         int MY_PERMISSIONS_REQUEST_READ_SMS = 123;
+        int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 123;
         permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
                 Manifest.permission.READ_SMS);
 
@@ -76,6 +80,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(MapsActivity.this,
                     new String[]{Manifest.permission.READ_SMS},
                     MY_PERMISSIONS_REQUEST_READ_SMS);
+
+            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
+
+        }
+        permissionCheck = ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION);
+
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(MapsActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(MapsActivity.this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
             // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
             // app-defined int constant. The callback method gets the
@@ -206,6 +227,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void updateList(final String smsMessage) {
         arrayAdapter.insert(smsMessage, 0);
         arrayAdapter.notifyDataSetChanged();
+    }
+
+    public void sendMsg(String theNumber, String myMsg){
+        String SENT = "Message Sent";
+        String DELIVERED = "Message Delivered";
+
+        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(SENT), 0);
+        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0 , new Intent(DELIVERED), 0);
+
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage(theNumber, null, myMsg, sentPI, deliveredPI);
+
     }
 
 
